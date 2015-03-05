@@ -1,0 +1,1 @@
+Phoca PDF Content Plugin is Joomla! CMS extension. Plugin which renders PDF document from Joomla! article.
