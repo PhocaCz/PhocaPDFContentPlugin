@@ -9,7 +9,6 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License version 2 or later;
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
-if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 jimport( 'joomla.html.parameter' );
 class plgPhocaPDFContent extends JPlugin
 {
@@ -92,10 +91,18 @@ class plgPhocaPDFContent extends JPlugin
 	
 	function onBeforeDisplayPDFContent(&$pdf, &$content, &$document) {
 		
-		$pdf->SetTitle($document->getTitle());
+		if (isset($document->_article_title) && $document->_article_title != '') {
+			$pdf->SetTitle($document->_article_title);
+			$content->pdf_name = $document->_article_title;
+		} else {
+			$pdf->SetTitle($document->getTitle());
+			
+		}
+	
+
 		$pdf->SetSubject($document->getDescription());
 		$pdf->SetKeywords($document->getMetaData('keywords'));
-
+	
 		/*
 		 * Specific Plugin code for Header
 		 * Header is set here in system plugin (Phoca PDF Content Plugin) because we need title and header data
@@ -107,7 +114,7 @@ class plgPhocaPDFContent extends JPlugin
 			$content->header_data = str_replace('{phocapdftitle}', $document->_article_title, $content->header_data);
 			$content->header_data = str_replace('{phocapdfheader}', $document->_header, $content->header_data);
 			
-			//$content->header_data = str_replace(utf8_encode("<p> </p>"), '<p></p>', $content->header_data);
+			//$content->header_data = str_replace(utf8_encode("<p>ï¿½</p>"), '<p></p>', $content->header_data);
 			$content->header_data = str_replace(array(utf8_encode(chr(11)), utf8_encode(chr(160))), ' ', $content->header_data);
 			
 			
@@ -115,30 +122,34 @@ class plgPhocaPDFContent extends JPlugin
 			$pdf->setHeaderData('' , 0, '', $content->header_data);
 		} else {
 			
-			$pdf->setHeaderData('' , 0, $document->getTitle(), $document->getHeader());
+			if (isset($document->_article_title) && $document->_article_title != '') {
+				$pdf->setHeaderData('' , 0, $document->_article_title, $document->getHeader());
+			} else {
+				$pdf->setHeaderData('' , 0, $document->getTitle(), $document->getHeader());
+			}
 		}
-		
+	
 		//administrator\components\com_phocapdf\helpers\phocapdfcontenttcpdf.php
 		//if ($content->footer_data != '') {
-		//	$content->footer_data = str_replace(utf8_encode("<p> </p>"), '<p></p>', $content->footer_data);
+		//	$content->footer_data = str_replace(utf8_encode("<p>ï¿½</p>"), '<p></p>', $content->footer_data);
 		//}
 		
 		$pdf->setHeaderFont(array($content->header_font_type, $content->header_font_style, $content->header_font_size));
 		
 		
-		$lang = &JFactory::getLanguage();
+		$lang = JFactory::getLanguage();
 		$font = $content->font_type;
 		$pdf->setRTL($lang->isRTL());
 
 	
 		$pdf->setFooterFont(array($content->footer_font_type, $content->footer_font_style, $content->footer_font_size));
 		// Initialize PDF Document
-		$pdf->AliasNbPages();
+		//$pdf->AliasNbPages();
 		$pdf->AddPage();
 		
 		//$dF = $document->getBuffer();
 		// The space must be copied directly from editor and the file must be saved as ANSI
-		//$documentOutput = str_replace(utf8_encode("<p> </p>"), '<p></p>', $dF);
+		//$documentOutput = str_replace(utf8_encode("<p>ï¿½</p>"), '<p></p>', $dF);
 		
 		if ($content->display_plugin == 0) {
 			
@@ -148,6 +159,7 @@ class plgPhocaPDFContent extends JPlugin
 			$pattern 		= '/\{(.*)\}/Ui';
 			$replacement 	= '';
 			$documentOutput = preg_replace($pattern, $replacement, $documentOutput);
+			
 			
 		} else {
 			//$dF = $document->getBuffer();

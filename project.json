@@ -1,0 +1,20 @@
+{
+	"author": "Jan Pavelka (www.phoca.cz)",
+	"authorUrl": "https://www.phoca.cz",
+	"copyright": "Jan Pavelka",
+	"license": "GNU/GPL",
+	"projectName": "PhocaPDFContentPlugin",
+	"extensionName": "Phoca PDF Content Plugin",
+	"projectInitials" : "PDF",				  
+	"description": "Phoca PDF Content plugin is Joomla! plugin which enables option to render PDF documents from Joomla! articles.",
+	"projectUrl": "https://www.phoca.cz/phocapdf-plugins",
+	"projectDocumentationUrl": "https://www.phoca.cz/documents/48-phoca-pdf-plugins/213-phocapdf-content-plugin",
+	"projectMainComponent": "Phoca PDF",
+	"projectMainComponentInfoUrl": "https://www.phoca.cz/project/phocapdf-joomla-pdf",
+	"projectDemo" : {
+		"Joomla! 3 Demo": "https://www.phoca.cz/joomla3demo/phoca-pdf-demo",
+		"Joomla! 2.5 Demo": "https://www.phoca.cz/joomlademo/phoca-pdf",
+		"Joomla! 1.5 Demo": "https://www.phoca.cz/demo/phocapdf-demo"
+	},
+	"projectColor": "#D50000"
+}
