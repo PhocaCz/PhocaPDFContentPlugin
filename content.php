@@ -153,7 +153,8 @@ class plgPhocaPDFContent extends JPlugin
 		
 		if ($content->display_plugin == 0) {
 			
-			$dF = $document->getArticleText();			
+			$dF = $document->getArticleText();	
+  			
 			$documentOutput = str_replace(array(utf8_encode(chr(11)), utf8_encode(chr(160))), ' ', $dF);
 			
 			$pattern 		= '/\{(.*)\}/Ui';

@@ -2,19 +2,18 @@
 <extension type="plugin" group="phocapdf" method="upgrade" version="3">
 	<name>plg_phocapdf_content</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>26/02/2019</creationDate>
+	<creationDate>09/02/2020</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.0.6</version>
+	<version>3.0.9</version>
 	<description>PLG_PHOCAPDF_CONTENT_DESCRIPTION</description>
 	<projectName>PhocaPDFContentPlugin</projectName>
 
 	<files>
 		<filename plugin="content">content.php</filename>
 		<filename plugin="content">index.html</filename>
-		<filename plugin="content">manifest.xml</filename>
 	</files>
 
 	<languages>
