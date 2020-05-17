@@ -26,6 +26,8 @@ Phoca PDF Content plugin is Joomla! plugin which enables option to render PDF do
 
 
 
+
+
 ## Support
 
 [Phoca Forum](https://www.phoca.cz/forum)
@@ -56,7 +58,7 @@ Phoca PDF Content plugin is Joomla! plugin which enables option to render PDF do
 
 ## Version
 
-3.0.9
+3.0.10
 
 
 
