@@ -150,10 +150,17 @@ class plgPhocaPDFContent extends JPlugin
 		//$dF = $document->getBuffer();
 		// The space must be copied directly from editor and the file must be saved as ANSI
 		//$documentOutput = str_replace(utf8_encode("<p>�</p>"), '<p></p>', $dF);
-		
+
+		if (isset($document->_article_title) && $document->_article_title != '') {
+			$dF = '<h1>'.$document->_article_title.'</h1>';
+		}
+		else {
+			$dF = '';
+		}
+
 		if ($content->display_plugin == 0) {
 			
-			$dF = $document->getArticleText();	
+			$dF = '<h1>'.$document->_article_title.'</h1>'.$document->getArticleText();	
   			
 			$documentOutput = str_replace(array(utf8_encode(chr(11)), utf8_encode(chr(160))), ' ', $dF);
 			
@@ -166,7 +173,6 @@ class plgPhocaPDFContent extends JPlugin
 			//$dF = $document->getBuffer();
 			
 			$documentOutputArray 	= $document->getBuffer();
-			$dF			= '';
 			
 			
 			if (isset($documentOutputArray['component']) && is_array($documentOutputArray)) {
