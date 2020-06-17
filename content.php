@@ -160,7 +160,7 @@ class plgPhocaPDFContent extends JPlugin
 
 		if ($content->display_plugin == 0) {
 			
-			$dF = '<h1>'.$document->_article_title.'</h1>'.$document->getArticleText();	
+			$dF = $dF.$document->getArticleText();	
   			
 			$documentOutput = str_replace(array(utf8_encode(chr(11)), utf8_encode(chr(160))), ' ', $dF);
 			
