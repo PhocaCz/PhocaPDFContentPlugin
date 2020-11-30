@@ -2,12 +2,12 @@
 <extension type="plugin" group="phocapdf" method="upgrade" version="3.9">
 	<name>plg_phocapdf_content</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>17/05/2020</creationDate>
+	<creationDate>30/11/2020</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.0.10</version>
+	<version>3.0.11</version>
 	<description>PLG_PHOCAPDF_CONTENT_DESCRIPTION</description>
 	<projectName>PhocaPDFContentPlugin</projectName>
 
@@ -216,6 +216,19 @@
 			<option value="1">PLG_PHOCAPDF_CONTENT_YES</option>
 			<option value="0">PLG_PHOCAPDF_CONTENT_NO</option>
 		</field>
+		
+		<field name="display_image_intro" type="list" default="0" label="PLG_PHOCAPDF_CONTENT_FIELD_DISPLAY_IMAGE_INTRO_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_DISPLAY_IMAGE_INTRO_DESC">
+			<option value="1">PLG_PHOCAPDF_CONTENT_YES</option>
+			<option value="0">PLG_PHOCAPDF_CONTENT_NO</option>
+		</field>
+		
+		<field name="display_image_fulltext" type="list" default="0" label="PLG_PHOCAPDF_CONTENT_FIELD_DISPLAY_IMAGE_FULLTEXT_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_DISPLAY_IMAGE_FULLTEXT_DESC">
+			<option value="1">PLG_PHOCAPDF_CONTENT_YES</option>
+			<option value="0">PLG_PHOCAPDF_CONTENT_NO</option>
+		</field>
+		
+		<field name="image_fulltext_intro_width" type="phocatextunit" default="" size="3" label="PLG_PHOCAPDF_CONTENT_FIELD_IMAGE_FULLTEXT_INTRO_WIDTH_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_IMAGE_FULLTEXT_INTRO_WIDTH_DESC"/>
+			
 		
 		<field name="exclude_articles" type="text" default="" size="30" label="PLG_PHOCAPDF_CONTENT_FIELD_EXCLUDE_ARTICLES_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_EXCLUDE_ARTICLES_DESC"/>
 		

@@ -2,7 +2,7 @@
 
 
 
-![Phoca PDF Content Plugin](https://github.com/PhocaCz/PhocaPDFContentPlugin/blob/master/content.png)
+![Phoca PDF Content Plugin](https://github.com/PhocaCz/PhocaPDFContentPlugin/blob/master/content.png?raw=true)
 
 # Phoca PDF Content Plugin
 
@@ -58,7 +58,7 @@ Phoca PDF Content plugin is Joomla! plugin which enables option to render PDF do
 
 ## Version
 
-3.0.10
+3.0.11
 
 
 

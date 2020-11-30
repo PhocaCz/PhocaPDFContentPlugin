@@ -12,7 +12,11 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport( 'joomla.html.parameter' );
 class plgPhocaPDFContent extends JPlugin
 {
+	
 	function onBeforeCreatePDFContent(&$content) {
+		
+		
+		
 		
 		$content->content = '';
 		// load plugin params info
@@ -52,6 +56,7 @@ class plgPhocaPDFContent extends JPlugin
 		$content->use_cache			= $pluginP->get('use_cache', 0);
 		
 		
+		
 		//Extra values
 		if ((int)$content->site_cell_height > 3) {
 			$content->site_cell_height = 3;
@@ -84,12 +89,49 @@ class plgPhocaPDFContent extends JPlugin
 			$content->image_scale = 0.5;
 		}
 		
+		return true;
+	}
+	
+	function onBeforeRenderOutputContent(&$item) {
 		
+		$plugin  = JPluginHelper::getPlugin('phocapdf', 'content');		
+		$pluginP = new JRegistry(); 
+		$pluginP->loadString($plugin->params);
+		
+		$display_image_intro			= $pluginP->get('display_image_intro', 0);
+		$display_image_fulltext			= $pluginP->get('display_image_fulltext', 1);
+		$image_fulltext_intro_width		= $pluginP->get('image_fulltext_intro_width', '');
+	
+		$outputBefore = '';
+		if ($display_image_intro == 1 || $display_image_fulltext == 1) {
+			if (!empty($item->images)) {
+				$images = json_decode($item->images, true);
+				
+				$widthCSS = '';
+				if ((int)$image_fulltext_intro_width > 0) {
+					$widthCSS = 'width: '.(int)$image_fulltext_intro_width . 'mm';
+				}
+				
+				if ($display_image_intro == 1 && isset($images['image_intro']) && $images['image_intro'] != '') {
+					$outputBefore .= '<div style="text-align:center"><img style="'.$widthCSS.'" src="'. Juri::root() . '' .$images['image_intro'].'" /></div>';
+				}
+				if ($display_image_fulltext == 1 && isset($images['image_fulltext']) && $images['image_fulltext'] != '') {
+					$outputBefore .= '<div style="text-align:center"><img style="'.$widthCSS.'" src="'. Juri::root() . '' .$images['image_fulltext'].'" /></div>';
+				}
+				
+			
+			}
+		}
+		
+		$item->text = $outputBefore . $item->text;
+		$item->article_text = $outputBefore . $item->article_text;
 		return true;
 	}
 	
 	
 	function onBeforeDisplayPDFContent(&$pdf, &$content, &$document) {
+		
+		
 		
 		if (isset($document->_article_title) && $document->_article_title != '') {
 			$pdf->SetTitle($document->_article_title);
@@ -98,6 +140,8 @@ class plgPhocaPDFContent extends JPlugin
 			$pdf->SetTitle($document->getTitle());
 			
 		}
+	
+	
 	
 
 		$pdf->SetSubject($document->getDescription());
