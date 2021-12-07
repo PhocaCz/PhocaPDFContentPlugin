@@ -101,6 +101,7 @@ class plgPhocaPDFContent extends JPlugin
 		$display_image_intro			= $pluginP->get('display_image_intro', 0);
 		$display_image_fulltext			= $pluginP->get('display_image_fulltext', 1);
 		$image_fulltext_intro_width		= $pluginP->get('image_fulltext_intro_width', '');
+		$site_font_font_size			= $pluginP->get('site_font_font_size', '');
 	
 		$outputBefore = '';
 		if ($display_image_intro == 1 || $display_image_fulltext == 1) {
@@ -122,9 +123,15 @@ class plgPhocaPDFContent extends JPlugin
 			
 			}
 		}
+		$sizeHTMLStart = '';
+		$sizeHTMLEnd = '';
+		if ($site_font_font_size != '') {
+			$sizeHTMLStart = '<div style="font-size:'.(int)$site_font_font_size.'pt">';
+			$sizeHTMLEnd = '</div>';
+		}
 		
-		$item->text = $outputBefore . $item->text;
-		$item->article_text = $outputBefore . $item->article_text;
+		$item->text = $sizeHTMLStart . $outputBefore . $item->text . $sizeHTMLEnd;
+		$item->article_text = $sizeHTMLStart .$outputBefore . $item->article_text . $sizeHTMLEnd;
 		return true;
 	}
 	

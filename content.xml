@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" group="phocapdf" method="upgrade" version="3.9">
+<extension type="plugin" group="phocapdf" method="upgrade" version="4.0">
 	<name>plg_phocapdf_content</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>30/11/2020</creationDate>
+	<creationDate>07/12/2021</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.0.11</version>
+	<version>4.0.0</version>
 	<description>PLG_PHOCAPDF_CONTENT_DESCRIPTION</description>
 	<projectName>PhocaPDFContentPlugin</projectName>
 
@@ -96,7 +96,9 @@
 		
 		<field name="font_type" type="phocapdffonttype" default="" label="PLG_PHOCAPDF_CONTENT_FIELD_FONT_TYPE_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_FONT_TYPE_DESC"/>
 		
-		<field name="site_font_color" type="phocacolortext" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_SITE_FONT_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_SITE_FONT_COLOR_DESC"/>
+		<field name="site_font_color" type="color" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_SITE_FONT_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_SITE_FONT_COLOR_DESC"/>
+		
+		<field name="site_font_font_size" type="phocatextunit" default="" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_SITE_FONT_SIZE_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_SITE_FONT_SIZE_DESC"/>
 		<field name="site_cell_height" type="text" default="1.2" size="3" label="PLG_PHOCAPDF_CONTENT_FIELD_SITE_CELL_HEIGHT_RATIO_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_SITE_CELL_HEIGHT_RATIO_DESC"/>
 		
 	</fieldset>
@@ -132,9 +134,9 @@
 			<option value="D">PLG_PHOCAPDF_CONTENT_LINE_THROUGH</option>
 		</field>
 		
-		<field name="header_font_color" type="phocacolortext" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_FONT_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_FONT_COLOR_DESC"/>
-		<field name="header_line_color" type="phocacolortext" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_LINE_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_LINE_COLOR_DESC"/>
-		<field name="header_bg_color" type="phocacolortext" default="" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_BACKGROUND_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_BACKGROUND_COLOR_DESC"/>
+		<field name="header_font_color" type="color" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_FONT_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_FONT_COLOR_DESC"/>
+		<field name="header_line_color" type="color" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_LINE_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_LINE_COLOR_DESC"/>
+		<field name="header_bg_color" type="color" default="" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_BACKGROUND_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_BACKGROUND_COLOR_DESC"/>
 
 		<field name="header_cell_height" type="text" default="1.2" size="3" label="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_CELL_HEIGHT_RATIO_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_HEADER_CELL_HEIGHT_RATIO_DESC"/>
 		
@@ -178,10 +180,10 @@
 			<option value="D">PLG_PHOCAPDF_CONTENT_LINE_THROUGH</option>
 		</field>
 		
-		<field name="footer_font_color" type="phocacolortext" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_FONT_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_FONT_COLOR_DESC"/>
-		<field name="footer_line_color" type="phocacolortext" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_LINE_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_LINE_COLOR_DESC"/>
+		<field name="footer_font_color" type="color" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_FONT_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_FONT_COLOR_DESC"/>
+		<field name="footer_line_color" type="color" default="#000000" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_LINE_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_LINE_COLOR_DESC"/>
 		
-		<field name="footer_bg_color" type="phocacolortext" default="" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_BACKGROUND_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_BACKGROUND_COLOR_DESC"/>
+		<field name="footer_bg_color" type="color" default="" size="8" label="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_BACKGROUND_COLOR_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_BACKGROUND_COLOR_DESC"/>
 		
 		<field name="footer_cell_height" type="text" default="1.2" size="3" label="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_CELL_HEIGHT_RATIO_LABEL" description="PLG_PHOCAPDF_CONTENT_FIELD_FOOTER_CELL_HEIGHT_RATIO_DESC"/>
 		
