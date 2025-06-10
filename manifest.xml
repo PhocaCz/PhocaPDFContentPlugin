@@ -46,19 +46,19 @@
 		<element>content</element>
 		<folder>phocapdf</folder>
 		<type>plugin</type>
-		<version>5.0.2</version>
-		<infourl title="Phoca PDF Content Plugin 5.0.2">https://www.phoca.cz/</infourl>
+		<version>5.1.0</version>
+		<infourl title="Phoca PDF Content Plugin 5.1.0">https://www.phoca.cz/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaPDFContentPlugin/releases/download/5.0.2/plg_phocapdf_content_v5.0.2.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaPDFContentPlugin/releases/download/5.1.0/plg_phocapdf_content_v5.1.0.zip</downloadurl>
 		</downloads>
-		<sha512>c0f6dab39ea4610e0e206f5ce7b5a6a96846f1a7ecd270ff21176c446316f66fb4919f5956a9153027d600174f7590dbf4fc8a1bbc6d13487750ab5de747085f</sha512>
+		<sha512>16102000f71e161e2f086e39cbdfaaa5cb05a6c22ae8a8bb9dc819eb766677f87408148eed400b9c15bf8f42c16fad1660be1c057773557a2e2e29e1f097e1fc</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>
 		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
 		<maintainerurl>https://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
-		<targetplatform name="joomla" version="(4|5)\.*"/>
+		<targetplatform name="joomla" version="5\.*"/>
 		<client>site</client>
 	</update>
 </updates>
